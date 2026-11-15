@@ -1,4 +1,4 @@
-# space_company
+# Space Company
 Interactive educational space adventure where NASA's iconic Moon and Mars hardware and rovers (Apollo 11 Eagle, Lunar Roving Vehicle, Spirit, and Opportunity) share their real mission stories to their new friends.
 
 Created for the **2026 NASA Space Apps Challenge — "Abandoned, but not Forgotten: Storytelling about NASA's Discarded Equipment on the Moon and Mars,"** 
