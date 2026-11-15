@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Space Company</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <canvas id="stars"></canvas>
+
+    <div class="wrap">
+      <header class="hud">
+        <div class="logo">
+          <span class="mk"><svg viewBox="0 0 24 24"><path d="M12 2c3 3 4.5 7 4 12l2 3v3l-3-1.5L12 22l-3-3.5L6 20v-3l2-3c-.5-5 1-9 4-12zm0 6a2 2 0 100 4 2 2 0 000-4z"/></svg></span>
+          Space Company
+        </div>
+        <div class="sp"></div>
+        <div class="lvl"><div class="bar" role="progressbar" aria-label="Experience"><i id="xp"></i></div>
+          <div class="pts"><svg class="i" viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.8-6.3 3.8 1.7-7L2 9.2l7.1-.6z"/></svg> <span id="coins">0</span> pts</div>
+        </div>
+      </header>
+
+      <div class="title">
+        <h1>Ever feel lonely on Earth or wish you had an extraordinary friend?</h1>
+        <p>Hop aboard our rocket! Millions of miles away on the Moon and Mars, brave NASA explorers are waiting to share their untold stories&mdash;and play a game with you!</p>
+        <h3>Choose your destination</h3>
+      </div>
+
+      <!-- 1) SPACE ROADMAP + 2) CHARACTERS (under their planet) -->
+      <div class="map" id="map">
+        <svg id="path"></svg>
+        <svg id="rocket" viewBox="0 0 34 56" aria-hidden="true">
+          <defs><linearGradient id="fl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff3a0"/><stop offset="1" stop-color="#ff4d1a" stop-opacity="0"/></linearGradient></defs>
+          <path d="M17 38 C9 46 11 54 17 56 C23 54 25 46 17 38Z" fill="url(#fl)"><animate attributeName="d" dur=".15s" repeatCount="indefinite" values="M17 38 C9 46 11 54 17 56 C23 54 25 46 17 38Z;M17 38 C11 44 13 50 17 52 C21 50 23 44 17 38Z;M17 38 C9 46 11 54 17 56 C23 54 25 46 17 38Z"/></path>
+          <path d="M17 0 C25 9 27 22 25 38 L9 38 C7 22 9 9 17 0Z" fill="#f4f7ff" stroke="#9fb4d9" stroke-width="1"/>
+          <circle cx="17" cy="17" r="5" fill="#4aa3ff" stroke="#27597a" stroke-width="1.5"/>
+          <path d="M9 28 L0 42 L9 38Z M25 28 L34 42 L25 38Z" fill="#fc3d21"/>
+          <path d="M17 0 C21 4 23 7 24 11 L10 11 C11 7 13 4 17 0Z" fill="#fc3d21"/>
+        </svg>
+
+        <div class="col c-earth">
+          <button class="stop earth" id="earth" aria-label="Earth, the launch site">
+            <span class="orb"><img data-key="earth" alt="Planet Earth"></span>
+            <span class="badge"><b>EARTH</b><span>Launch site</span></span>
+          </button>
+          <div class="brief">
+            <h3>HOW TO PLAY</h3>
+            <ol><li>Pick the Moon or Mars</li><li>Watch your rocket launch</li><li>Meet your new friends</li></ol>
+          </div>
+        </div>
+
+        <div class="col c-moon">
+          <button class="stop moon go" id="moon" aria-label="Launch to the Moon">
+            <span class="orb"><img data-key="moon" alt="The Moon"></span>
+            <span class="badge"><b>THE MOON</b><span>384,400 km away</span></span>
+          </button>
+          <!-- Merged both Moon hardware cards into one .chars container -->
+          <div class="chars">
+            <button class="char" data-planet="moon" data-href="eagle.html">
+              <span class="ph"><img data-key="eagle" alt="Eagle, the Apollo 11 lunar module"></span>
+              <span class="tx"><b>Eagle</b><small>Apollo 11 lunar lander, 1969</small><span class="st">Descent stage still on the Moon</span></span>
+            </button>
+            <button class="char" data-planet="moon" data-href="lunar_rover_vehicle.html">
+              <span class="ph"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Apollo_15_Lunar_Roving_Vehicle.jpg?width=900" alt="Lunar Roving Vehicle"></span>
+              <span class="tx"><b>Lunar Roving Vehicle</b><small>Three electric "moon buggies" driven by astronauts.</small><span class="st">Parked permanently on the Moon</span></span>
+            </button>
+          </div>
+        </div>
+
+        <div class="col c-mars">
+          <button class="stop mars go" id="mars" aria-label="Launch to Mars">
+            <span class="orb"><img data-key="mars" alt="Planet Mars"></span>
+            <span class="badge"><b>MARS</b><span>About 225 million km away</span></span>
+          </button>
+          <div class="chars">
+            <button class="char" data-planet="mars" data-href="opportunity.html">
+              <span class="ph"><img data-key="opp" alt="Opportunity rover"></span>
+              <span class="tx"><b>Opportunity</b><small>Mars rover, landed 2004</small><span class="st">Silent since 2018</span></span>
+            </button>
+            <button class="char" data-planet="mars" data-href="spirit.html">
+              <span class="ph"><img data-key="spirit" alt="Spirit rover"></span>
+              <span class="tx"><b>Spirit</b><small>Opportunity's twin rover</small><span class="st">Silent since 2010</span></span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+
+<!-- 3) SIMULATION GAME -->
+      <h2 class="sec">SURFACE SIMULATION</h2>
+      <div class="games">
+        <a class="game-hero" href="game.html">
+          <div class="g-thumb">
+            <img data-key="eagle" alt="Space Buddy Missions">
+            <span class="g-badge">3 PLAYABLE MISSIONS</span>
+          </div>
+          <div class="g-info">
+            <small>INTERACTIVE CO-OP SIMULATION</small>
+            <h3>Buddy Surface Missions</h3>
+            <p>Step onto the Moon and Mars alongside <b>Eagle</b>, the <b>Lunar Roving Vehicle</b>, and <b>Opportunity</b>. Deploy real NASA science instruments, collect ancient Moon rocks, and survive Martian dust storms!</p>
+          </div>
+          <span class="g-cta">Launch Mission &rarr;</span>
+        </a>
+      </div>
+    </div>
+
+    <div id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>

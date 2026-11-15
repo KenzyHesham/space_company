@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mars Exploration Rover Spirit (MER-A) | Mission Explorer</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mer_rover.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+<script src="spirit.js" defer></script>
+</head>
+<body>
+<div class="app">
+  <!-- ===== SIDEBAR: hardware profile, mission score, badges, skins ===== -->
+  <aside class="side" id="side">
+    <div class="side-head"><a class="back" href="index.html">&larr; Back to the roadmap</a><button class="xbtn" id="closeSide">Close</button></div>
+    <figure class="hero" id="hero"><img id="heroImg" alt="NASA Mars Exploration Rover Spirit"><figcaption>NASA visualization: Mars Exploration Rover Spirit on the Red Planet. Tap to enlarge.</figcaption></figure>
+    <h1>Mars Rover Spirit</h1>
+    <p class="sub">MER-A &middot; Gusev Crater, Mars</p>
+    <div class="tags"><span>Landed Jan 3, 2004</span><span>7.7 km Driven</span><span>2,208 Sols Active</span></div>
+
+    <section class="sec"><h3>EXPLORER RANK</h3>
+      <div class="lvl"><b id="lvlName">New Contact</b><span><span id="scoreSide">0</span> pts</span></div>
+      <div class="bar"><i id="lvlBar"></i></div><div class="next" id="lvlNext"></div>
+    </section>
+    <section class="sec"><h3>BADGES</h3><div class="badges" id="badges"></div></section>
+    <section class="sec"><h3>YOUR SUIT</h3><div class="skins" id="astroSkins"></div></section>
+    <section class="sec"><h3>ROVER CHASSIS</h3><div class="skins" id="roverSkins"></div></section>
+    <p class="credit">Facts: NASA Science &mdash; Mars Exploration Rovers: Spirit and Opportunity (NASA/JPL-Caltech). Photos: NASA/JPL-Caltech/Cornell via Wikimedia Commons. The 3D model here is a simplified teaching model.</p>
+  </aside>
+
+  <!-- ===== CHAT ===== -->
+  <main class="chatwrap">
+    <header class="chead">
+      <button class="prof" id="openSide">Profile</button>
+      <div class="av"><img id="headImg" alt=""></div>
+      <div class="nm"><b>Spirit (MER-A)</b><span id="status">resting at Troy, Gusev Crater</span></div>
+      <div class="sp"></div>
+      <div class="prog"><span id="progTxt">Part 0 of 7</span><i><b id="progBar"></b></i></div>
+      <div class="pts"><svg class="i" viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.8-6.3 3.8 1.7-7L2 9.2l7.1-.6z"/></svg> <span id="scoreTop">0</span></div>
+    </header>
+    <div class="note">Interactive Story: Told from the spacecraft&rsquo;s point of view using real NASA mission data.</div>
+    <div class="chat" id="chat" aria-live="polite"></div>
+  </main>
+</div>
+<div class="lightbox" id="lb"><img alt=""></div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Space Buddy Missions | Simulation</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="game.css">
+<script src="game.js" defer></script>
+</head>
+<body>
+<canvas id="g"></canvas>
+
+<div id="hud">
+  <a class="pill" href="index.html">&larr; Roadmap</a>
+  <button class="pill" id="menuBtn">&#9776; Missions</button>
+  <div class="pill obj" id="obj"></div>
+  <div class="pill gold">&#9733; <span id="stars">0</span></div>
+  <button class="pill" id="muteBtn" aria-label="Sound">&#128266;</button>
+  <button class="pill" id="fsBtn" aria-label="Fullscreen">&#9974;</button>
+</div>
+<div id="sub"><div class="av"><img id="avImg" alt=""></div><div><b id="who"></b><span id="say"></span></div></div>
+<div id="fact"></div>
+<div id="pop"></div>
+
+<section class="ov" id="menu">
+  <div class="kick">SPACE COMPANY &middot; SURFACE SIMULATION</div>
+  <h1>BUDDY SURFACE MISSIONS</h1>
+  <p class="lead">Explore the Moon and Mars with your robot and spacecraft friends. Real NASA missions, real places, real facts!</p>
+  <div class="cards" id="cards"></div>
+  <div class="row"><button class="btn ghost" id="kidBtn"></button><span class="hint">Move: WASD / arrows, or touch &amp; hold anywhere</span></div>
+</section>
+
+<section class="ov off" id="intro">
+  <div class="kick" id="iKick"></div>
+  <h1 id="iTitle"></h1>
+  <img id="phImg" alt="Real NASA photograph">
+  <p class="lead" id="iText"></p>
+  <button class="btn action" id="goBtn">Let's go!</button>
+</section>
+
+<section class="ov off" id="end">
+  <div class="kick">MISSION COMPLETE</div>
+  <h1 id="eTitle"></h1>
+  <p class="lead" id="eText"></p>
+  <div class="row"><button class="btn action" id="nextBtn">Next mission &rarr;</button><button class="btn ghost" id="againBtn">Menu</button></div>
+</section>
+</body>
+</html>
